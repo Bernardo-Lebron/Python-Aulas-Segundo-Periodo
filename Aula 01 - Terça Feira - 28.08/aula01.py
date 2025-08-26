@@ -10,7 +10,7 @@ valor = 123.456
 
 print(f"Valor formatado: {valor:.1f}")
 
-valor1 = 0.5
+valor1 = 0.4
 
 print(f"Valor formatado: {valor1:.1%}")
 
