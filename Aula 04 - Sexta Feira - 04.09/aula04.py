@@ -43,7 +43,7 @@ altura = float(input("Informe a sua altura: "))
 
 imc = peso / (altura * altura)
 
-print(f"Seu IMC é {imc:.2f}", end="\n")
+print(f"O seu IMC é {imc:.2f}", end="\n")
 
 if imc < 18.5:
     print("Abaixo do peso!")
