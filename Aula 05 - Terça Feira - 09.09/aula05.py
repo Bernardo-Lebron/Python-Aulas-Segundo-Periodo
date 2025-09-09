@@ -6,7 +6,7 @@ print(bandas[0])
 
 #exe02
 
-names = ['Bernardo', 'Rafaela', 'Marli', 'Neneco', 'Nick', 'Tuco' ]
+names = ['Bernardo', 'Rafaela', 'Marli', 'Neneco', 'Nick', 'Tuco']
 
 print(names[0], names[1], names[2], names[3], names[4], names[5])
 
