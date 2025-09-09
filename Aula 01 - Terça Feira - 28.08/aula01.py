@@ -1,4 +1,4 @@
-'''Primeiro programa'''
+#Primeiro programa
 
 nome = 'Bernardo Lebron'
 

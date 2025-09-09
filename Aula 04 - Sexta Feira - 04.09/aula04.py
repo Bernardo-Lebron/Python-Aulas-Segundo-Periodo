@@ -1,4 +1,4 @@
-###### exercicio 1
+#exe01
 
 chovendo = False
 
@@ -7,7 +7,7 @@ if not chovendo:
 else:
     print("vou ficar em casa")
 
-###### exercicio 2
+#exe02
 
 usuario_logado = None
 
@@ -23,7 +23,7 @@ if not usuario_logado:
 else:
     print(f"Bem vindo, {usuario_logado}")
 
-###### exercicio 3
+#exe03
 
 idade = int(input("Informe a sua idade: "))
 
@@ -36,7 +36,7 @@ elif idade >= 18 and idade <= 70:
 elif idade > 70:
     print("Você pode votar (voto facultativo)") 
 
-###### exercicio 4
+#exe04
 
 peso = float(input("Informe seu peso: "))
 altura = float(input("Informe a sua altura: "))
@@ -54,7 +54,7 @@ elif imc >= 25 and imc <= 29.9:
 else:
     print("Obesidade!")
 
-###### exercicio 5
+#exe05
 
 numero = int(input("Informe um número: "))
 
@@ -70,7 +70,7 @@ elif numero > 0:
 else:
     print("O número é negativo!")
 
-###### exercicio 6
+#exe06
 
 usuario_correto = "admin"
 senha_correta = "123"
@@ -83,7 +83,7 @@ if usuario_correto == usuario and senha_correta == senha:
 else : 
     print("Usuário ou senha incorretos!")
 
-###### exercicio 7
+#exe07
 
 temperatura = float(input("Temperatura: "))
 unidade_original = input("Unidade original (C/F): ").upper()

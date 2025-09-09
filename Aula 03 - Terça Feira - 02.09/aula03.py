@@ -1,4 +1,4 @@
-###### Exercício 1
+#exe01
 
 nome = input("Digite seu nome completo: ")
 
@@ -11,7 +11,7 @@ print("Total de letras:", nome_sem_espaco)
 primeiro_nome = nome.split()
 print("Primeiro Nome:", primeiro_nome[0])
 
-###### Exercício 2
+#exe02
 
 frase = input("Digite uma frase: ")
 
@@ -19,7 +19,7 @@ quantidade = frase.lower().count("a")
 
 print("Número de letras 'a' ou 'A': ", quantidade)
 
-###### Exercício 3
+#exe03
 
 senha = input("Digite uma senha: ")
 
@@ -31,14 +31,14 @@ print("Contém @? ", '@' in senha)
 
 print("Senha longa? ", len(senha)>8)
 
-###### Exercício 4
+#exe04
 
 codificador_de_vogais = input("Digite uma frase: ")
 
 print("Frase codificada: ", codificador_de_vogais.lower().replace("a", "1")
     .replace("e", "2").replace("i", "3").replace("o", "4").replace("u", "5"))
 
-###### Exercício 5
+#exe05
 
 temperatura = float(input("Informe a temperatura em Celsius: "))
 
@@ -46,7 +46,7 @@ fahrenheit = (temperatura * 1.8) + 32
 
 print("Temperatura em Fahrenheit: ", fahrenheit)
 
-###### Exercício 6
+#exe06
 
 raio_circulo = float(input("Informe o raio do círculo: "))
 
