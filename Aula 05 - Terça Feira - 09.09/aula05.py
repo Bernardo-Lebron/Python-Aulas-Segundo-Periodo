@@ -62,7 +62,7 @@ for i in range(5):
 #exe08
 
 nomes = ['Bernardo', 'Rafaela']
-idades = ['22', '21']
+idades = ['21', '21']
 
 for nome, idade in zip(nomes, idades):
     print(f"{nome} tem {idade} anos")
