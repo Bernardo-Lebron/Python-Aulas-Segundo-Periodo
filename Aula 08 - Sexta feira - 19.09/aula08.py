@@ -108,4 +108,3 @@ if erros:
         print(erro)
 else:
     print("Senha aceita!")
-
