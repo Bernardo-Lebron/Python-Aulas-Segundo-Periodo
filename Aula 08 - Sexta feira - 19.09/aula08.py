@@ -56,7 +56,7 @@ menor = min(notas)
 print(f"A média é: {media}")
 print(f"A maior é: {maior}")
 print(f"A menor é: {menor}")
-'''
+
 #exe04
 
 especiais = "!@#$%¨&*()"
