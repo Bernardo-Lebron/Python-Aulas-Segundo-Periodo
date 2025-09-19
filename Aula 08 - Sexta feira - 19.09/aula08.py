@@ -1,5 +1,4 @@
 #exe01
-'''
 
 numeros = list(range(1,101))
 
