@@ -36,7 +36,7 @@ for i in frase.lower():
 
 print(f"Existem {contador_vogais} vogais na frase!")
 print(f"Existem {contador_consoates} consoantes na frase!")
-print("Contém a palavra 'engenharia'? ", 'engenharia' in frase)
+print("Contém a palavra 'engenharia'? ", 'engenharia' in frase.lower())
 
 print(frase[::-1])
 
@@ -44,7 +44,7 @@ print(frase[::-1])
 
 notas = []
 
-for i in range(3):
+for i in range(10):
     nota = float(input("Informe uma nota: "))
     notas.append(nota)
 
