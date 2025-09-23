@@ -38,14 +38,14 @@ while True:
 
         case 3:
             pesquisar = input("Pesquisar contato: ")
-            if pesquisar in nome:
+            if pesquisar in nomes:
                 print(f"{pesquisar} está na lista de contatos!")
             else:
                 print(f"{pesquisar} não está na lista de contatos")
 
         case 4:
             for i in range(len(nomes)):
-                print(f"{i} - {nome} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
+                print(f"{i} - {nomes} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
 
         case 5:
             letra_inicial = input("Informe a letra que deseja procurar os contatos: ").upper()
@@ -54,7 +54,11 @@ while True:
                     print(f"{i} - {nome} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
 
         case 6:
-            input("Informe um mês em número: ")
+            mes = input("Informe um mês em número (ex: 01 para Janeiro): ")
             print("Os aniversariantes do mês são: ")
+            for i in range(len(datas)):
+                if (datas[i].endswith(mes)):
+                    print(f"{i} - {nomes} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
+
         case 7:
             break
