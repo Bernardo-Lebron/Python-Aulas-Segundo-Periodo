@@ -10,8 +10,8 @@ while True:
         "3 - Pesquisar um contato pelo nome\n" \
         "4 - listar todos os contatos\n" \
         "5 - Listar os contatos cujo nome inicia se com uma dada letra\n" \
-        "6 - Rmprimir os aniversariantes do mês\n" \
-        "7 - Encerrar o programa")
+        "6 - Imprimir os aniversariantes do mês\n" \
+        "0 - Encerrar o programa")
 
     var = int(input("\nDigite um comando: "))
 
@@ -19,7 +19,7 @@ while True:
         case 1:
             nome = input("Informe o nome: ")
             nomes.append(nome)
-            data = input("Informe a data de nascimento: ")
+            data = input("Informe a data de nascimento (ex: 01/07): ")
             datas.append(data)
             endereco = input("Informe o endereço: ")
             enderecos.append(endereco)
@@ -39,26 +39,26 @@ while True:
         case 3:
             pesquisar = input("Pesquisar contato: ")
             if pesquisar in nomes:
-                print(f"{pesquisar} está na lista de contatos!")
+                print(f"{pesquisar} está na lista de contatos!\n")
             else:
                 print(f"{pesquisar} não está na lista de contatos")
 
         case 4:
             for i in range(len(nomes)):
-                print(f"{i} - {nomes} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
+                print(f"{i} - {nomes[i]} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
 
         case 5:
             letra_inicial = input("Informe a letra que deseja procurar os contatos: ").upper()
             for i, nome in enumerate(nomes):
                 if nome.upper().startswith(letra_inicial):
-                    print(f"{i} - {nome} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
+                    print(f"{i} - {nomes[i]} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
 
         case 6:
             mes = input("Informe um mês em número (ex: 01 para Janeiro): ")
             print("Os aniversariantes do mês são: ")
             for i in range(len(datas)):
                 if (datas[i].endswith(mes)):
-                    print(f"{i} - {nomes} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
+                    print(f"{i} - {nomes[i]} | {datas[i]} | {enderecos[i]} | {telefones[i]}")
 
-        case 7:
+        case 0:
             break
