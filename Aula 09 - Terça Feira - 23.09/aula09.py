@@ -62,3 +62,6 @@ while True:
 
         case 0:
             break
+
+        case _:
+            print("Opção inválida!")
