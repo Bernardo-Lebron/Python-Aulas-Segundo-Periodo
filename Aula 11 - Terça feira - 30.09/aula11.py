@@ -73,6 +73,8 @@ print(notas)
 
 media = sum(notas.values())/ len(notas)
 
+print(f"Média da turma: {media:.2f}")
+
 if media < 6:
     print("Rever metodologia!")
 elif media == 6:
