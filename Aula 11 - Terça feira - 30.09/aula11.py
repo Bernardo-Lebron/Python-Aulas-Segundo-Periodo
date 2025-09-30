@@ -1,5 +1,5 @@
 from random import randint
-'''
+
 #exe01
 cadastro = {}
 
@@ -81,14 +81,15 @@ elif media > 6 and media < 8:
     print("Satisfatório!") 
 elif media >= 8:
     print("Aí sim!")
-'''
+
+#exe09
 
 glossario = {
     "append" : "Adiciona um elemento ao final da lista",
-    "pop" : "Remove e retorna o último elemnto da lista (ou de um índice específico)",
+    "pop" : "Remove e retorna o último elemento da lista (ou de um índice específico)",
     "insert" : "Insere um elemento em uma posição especifica na lista",
     "sort" : "Ordena a lista em ordem crescente por padrão",
-    "remove" : "Remove a primeira ocerrência de um valor especificado na lista"
+    "remove" : "Remove a primeira ocorrência de um valor especificado na lista"
 }
 
 for palavra, significado in glossario.items():
