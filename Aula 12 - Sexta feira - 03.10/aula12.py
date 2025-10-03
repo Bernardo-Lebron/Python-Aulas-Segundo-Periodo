@@ -1,5 +1,5 @@
-'''
 #exe01
+
 rios = {
     "Rio Nilo" : "Egito",
     "Rio Amazonas" : "Brasil",
@@ -52,7 +52,7 @@ pets = [Nick, Geremias, Sextafeira]
 
 for pet in pets:
     print(f"{pet["dono"]} tem um {pet["tipo"]}".format())
-'''
+
 #exe04
 
 favorite_places = {
