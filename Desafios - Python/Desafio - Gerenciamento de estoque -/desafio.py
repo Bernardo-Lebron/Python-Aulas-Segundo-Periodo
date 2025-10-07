@@ -7,6 +7,8 @@ estoque = {
 }
 
 def exibir_estoque():
+    """Exibe o estoque atual"""
+
     print("\nEstoque Atual:")
     for produto, dados in estoque.items():
         print(f"{produto}: Quantidade = {dados['quantidade']}, Preço = R${dados['preco']:.2f}")
@@ -14,6 +16,8 @@ def exibir_estoque():
 
 
 def adicionar_produto():
+    """Adiciona um novo produto ao estoque"""
+
     nome = input("Nome do produto: ")
     if nome in estoque:
         print("Produto já existe no estoque.\n")
@@ -25,6 +29,8 @@ def adicionar_produto():
 
 
 def atualizar_produto():
+    """Atualiza a quantidade e o preço de um produto existente no estoque"""
+
     nome = input("Nome do produto a ser atualizado: ")
     if nome not in estoque:
         print("Produto não encontrado no estoque.\n")
@@ -36,6 +42,8 @@ def atualizar_produto():
 
 
 def calcular_valor_total():
+    """Calcula e exibe o valor total do estoque"""
+
     total = 0
     for produto in estoque.values():
         total += produto["quantidade"] * produto["preco"]
@@ -44,6 +52,8 @@ def calcular_valor_total():
 
 
 def remover_produto():
+    """Remove um produto do estoque"""
+
     nome = input("Nome do produto a ser removido: ")
     if nome not in estoque:
         print("Produto não encontrado no estoque.\n")
@@ -53,6 +63,8 @@ def remover_produto():
 
 
 def exibir_estoque_ordenado_por_nome():
+    """Exibe o estoque ordenado por nome do produto"""
+
     print("\nEstoque Ordenado por Nome:")
     for produto in sorted(estoque.keys()):
         dados = estoque[produto]
@@ -61,18 +73,18 @@ def exibir_estoque_ordenado_por_nome():
 
 
 def exibir_estoque_ordenado_por_valor():
+    """Exibe o estoque ordenado pelo valor total (quantidade * preço) do produto"""
+
     print("\nEstoque Ordenado por Valor Total (maior para menor):")
     produtos_ordenados = sorted(estoque.items(),key=lambda item: item[1]["quantidade"] * item[1]["preco"],reverse=True)
-
     for produto, dados in produtos_ordenados:
         valor_total = dados["quantidade"] * dados["preco"]
-        print(f"{produto}: Quantidade = {dados['quantidade']}, "
-              f"Preço = R${dados['preco']:.2f}, "
-              f"Valor total = R${valor_total:.2f}")
+        print(f"{produto}: Quantidade = {dados['quantidade']}, "f"Preço = R${dados['preco']:.2f}, "f"Valor total = R${valor_total:.2f}")
     print("\n")
 
 
 while True:
+    
     print("-- Gerenciamento de Estoque --\n")
     print("1 - Exibir estoque")
     print("2 - Adicionar produto")
@@ -100,7 +112,7 @@ while True:
     elif opcao == "7":
         exibir_estoque_ordenado_por_valor()
     elif opcao == "0":
-        print("Encerrando o programa...")
+        print("Encerrando o programa...\n")
         break
     else:
         print("Opção inválida.\n")
