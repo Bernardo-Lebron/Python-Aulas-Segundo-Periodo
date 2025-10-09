@@ -25,7 +25,7 @@ print(f"A maior palavra digitada foi: {palavra_maior}")
 print(f"A menor palavra digitada foi: {palavra_menor}")
 
 #informa quais as palavras da frase começam com vogal
-vogais = ("a","e","i","o","u","á","é","í","ó","ú","à","è","ì","ò","ù","ã","õ","â","ê","ô","î")
+vogais = ("a","e","i","o","u","á","é","í","ó","ú","à","è","ì","ò","ù","ã","õ","â","ê","ô")
 
 palavras_vogais = []
 
