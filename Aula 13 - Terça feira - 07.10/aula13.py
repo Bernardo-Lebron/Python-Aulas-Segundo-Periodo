@@ -11,7 +11,7 @@ help(msg)
 msg()
 
 #exe02
-def make_album(artista, album,):
+def make_album(artista, album):
     """Exibe o nome do artista e um álbum."""
 
     return{'artista': artista, 'album': album}

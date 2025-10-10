@@ -83,37 +83,37 @@ def exibir_estoque_ordenado_por_valor():
     print("\n")
 
 
-while True:
-    
-    print("-- Gerenciamento de Estoque --\n")
-    print("1 - Exibir estoque")
-    print("2 - Adicionar produto")
-    print("3 - Atualizar produto")
-    print("4 - Calcular valor total do estoque")
-    print("5 - Remover produto")
-    print("6 - Exibir estoque ordenado por nome")
-    print("7 - Exibir estoque ordenado por valor total")
-    print("0 - Sair\n")
+    while True:
+        
+        print("-- Gerenciamento de Estoque --\n")
+        print("1 - Exibir estoque")
+        print("2 - Adicionar produto")
+        print("3 - Atualizar produto")
+        print("4 - Calcular valor total do estoque")
+        print("5 - Remover produto")
+        print("6 - Exibir estoque ordenado por nome")
+        print("7 - Exibir estoque ordenado por valor total")
+        print("0 - Sair\n")
 
-    opcao = input("Escolha uma opção: ")
+        opcao = input("Escolha uma opção: ")
 
-    if opcao == "1":
-        exibir_estoque()
-    elif opcao == "2":
-        adicionar_produto()
-    elif opcao == "3":
-        atualizar_produto()
-    elif opcao == "4":
-        calcular_valor_total()
-    elif opcao == "5":
-        remover_produto()
-    elif opcao == "6":
-        exibir_estoque_ordenado_por_nome()
-    elif opcao == "7":
-        exibir_estoque_ordenado_por_valor()
-    elif opcao == "0":
-        print("Encerrando o programa...\n")
-        break
-    else:
-        print("Opção inválida.\n")
+        if opcao == "1":
+            exibir_estoque()
+        elif opcao == "2":
+            adicionar_produto()
+        elif opcao == "3":
+            atualizar_produto()
+        elif opcao == "4":
+            calcular_valor_total()
+        elif opcao == "5":
+            remover_produto()
+        elif opcao == "6":
+            exibir_estoque_ordenado_por_nome()
+        elif opcao == "7":
+            exibir_estoque_ordenado_por_valor()
+        elif opcao == "0":
+            print("Encerrando o programa...\n")
+            break
+        else:
+            print("Opção inválida.\n")
 
