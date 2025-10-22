@@ -1,0 +1,3 @@
+Em Python podemos criar programas de forma simples e poderosa.
+Em Python podemos trabalhar com listas, dicionarios e funcoes facilmente.
+Em Python podemos automatizar tarefas e processar dados com rapidez.
