@@ -1,4 +1,5 @@
 #exe01
+
 while True:
     try:
         n1 = float(input("Digite o primeiro número: "))
