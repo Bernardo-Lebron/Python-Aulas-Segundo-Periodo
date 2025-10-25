@@ -49,6 +49,56 @@ def desenhar_campo(mapa):
         print()
 
 
+def contar_bombas_vizinhas(mapa, x, y):
+    """Conta quantas bombas existem nas 8 posições vizinhas de (x, y)."""
+
+    bombas = 0
+
+    for i in range(x - 1, x + 2):
+        for j in range(y - 1, y + 2):
+            if mapa[i][j] == 'B':
+                bombas += 1
+
+    return bombas
+
+
+def revelar_posicao(mapa_real, mapa_visivel, x, y):
+    """Revela apenas a posição (x, y) escolhida pelo jogador."""
+
+    if mapa_visivel[x][y] != '*':  # Já foi revelada ou marcada
+        return False
+
+    if mapa_real[x][y] == 'B':
+        mapa_visivel[x][y] = 'B'
+        return True  # Indicando que acertou uma bomba
+
+    bombas_vizinhas = contar_bombas_vizinhas(mapa_real, x, y)
+    mapa_visivel[x][y] = str(bombas_vizinhas)
+    return False
+
+
+def marcar_bandeira(mapa_visivel, x, y):
+    """Marca ou desmarca uma bandeira na posição (x, y)."""
+
+    if mapa_visivel[x][y] == '*':
+        mapa_visivel[x][y] = 'M' # Marca a bandeira
+    elif mapa_visivel[x][y] == 'M':
+        mapa_visivel[x][y] = '*' # Desmarca a bandeira
+
+
+def verificar_vitoria(mapa_real, mapa_visivel):
+    """Verifica se todas as minas foram corretamente marcadas com 'M'."""
+
+    for i in range(1, len(mapa_real) - 1):
+        for j in range(1, len(mapa_real[0]) - 1):
+            if mapa_real[i][j] == 'B' and mapa_visivel[i][j] != 'M':
+                return False  # Ainda há bomba não marcada
+            if mapa_real[i][j] != 'B' and mapa_visivel[i][j] == 'M':
+                return False  # Marcou algo errado
+    return True
+
+
+
 if __name__ == "__main__":
 
     print("\n\t==== CAMPO MINADO ====\n")
@@ -93,11 +143,34 @@ if __name__ == "__main__":
         if opcao == 1:
             x = int(input("Digite a linha que deseja revelar: "))
             y = int(input("Digite a coluna que deseja revelar: "))
-            # Lógica para revelar a posição (a ser implementada)
+
+            if revelar_posicao(mapa_real, mapa_visivel, x, y):
+                print("Você acertou uma bomba! Fim de jogo.")
+                desenhar_campo(mapa_real)
+                break
+
+            desenhar_campo(mapa_visivel)
+
+            if verificar_vitoria(mapa_real, mapa_visivel):
+                print("Parabéns! Você venceu o jogo.")
+                desenhar_campo(mapa_real)
+                break
+
+
+
         elif opcao == 2:
             x = int(input("Digite a linha da bandeira: "))
             y = int(input("Digite a coluna da bandeira: "))
-            # Lógica para marcar/desmarcar bandeira (a ser implementada)
+
+            marcar_bandeira(mapa_visivel, x, y)
+            desenhar_campo(mapa_visivel)
+            
+            if verificar_vitoria(mapa_real, mapa_visivel):
+                print("Parabéns! Você venceu o jogo.")
+                desenhar_campo(mapa_real)
+
+
+
         elif opcao == 0:
             print("Saindo do jogo. Até a próxima!")
             break
