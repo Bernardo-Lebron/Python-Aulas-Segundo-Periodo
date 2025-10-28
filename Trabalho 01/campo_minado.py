@@ -7,7 +7,7 @@ def criar_campo(linha, coluna):
     return mapa
 
 
-def desenha_campo(mapa):
+def preenche_campo(mapa):
     """Preenche as bordas do mapa com '-' e '|'. e o interior com '*'."""
 
     linha = len(mapa) 
@@ -40,7 +40,7 @@ def alocar_bombas(mapa, qtd_bombas):
             bombas_colocadas += 1
 
 
-def desenhar_campo(mapa):
+def printar_campo(mapa):
     """Mostra o mapa na tela."""
 
     for i in range(len(mapa)):
@@ -65,7 +65,7 @@ def contar_bombas_vizinhas(mapa, x, y):
 def revelar_posicao(mapa_real, mapa_visivel, x, y):
     """Revela apenas a posição (x, y) escolhida pelo jogador."""
 
-    if mapa_visivel[x][y] != '*':  # Já foi revelada ou marcada
+    if mapa_visivel[x][y] != '*': 
         return False
 
     if mapa_real[x][y] == 'B':
@@ -116,8 +116,8 @@ if __name__ == "__main__":
     mapa_real = criar_campo(dimensao + 2, dimensao + 2) #Cria o mapa real com bordas
     mapa_visivel = criar_campo(dimensao + 2, dimensao + 2) #Cria o mapa visível ao usuario com bordas
 
-    desenha_campo(mapa_real) #Preenche as bordas e o interior do mapa real
-    desenha_campo(mapa_visivel) #Preenche as bordas e o interior do mapa visível
+    preenche_campo(mapa_real) #Preenche as bordas e o interior do mapa real
+    preenche_campo(mapa_visivel) #Preenche as bordas e o interior do mapa visível
 
     while True: #Pede a quantidade de bombas ao usuário
         qtd_bombas = int(input(f"Digite o número de bombas (MÁX: {format(dimensao * dimensao - 1)}): "))
@@ -129,7 +129,7 @@ if __name__ == "__main__":
             break
 
     alocar_bombas(mapa_real, qtd_bombas) #Aloca as bombas no mapa real
-    desenhar_campo(mapa_visivel) #Mostra o mapa visível ao usuário
+    printar_campo(mapa_visivel) #Mostra o mapa visível ao usuário
 
 
     while True: #Loop principal do jogo
@@ -146,31 +146,26 @@ if __name__ == "__main__":
 
             if revelar_posicao(mapa_real, mapa_visivel, x, y):
                 print("Você acertou uma bomba! Fim de jogo.")
-                desenhar_campo(mapa_real)
+                printar_campo(mapa_real)
                 break
 
-            desenhar_campo(mapa_visivel)
+            printar_campo(mapa_visivel)
 
             if verificar_vitoria(mapa_real, mapa_visivel):
                 print("Parabéns! Você venceu o jogo.")
-                desenhar_campo(mapa_real)
+                printar_campo(mapa_real)
                 break
-
-
-
         elif opcao == 2:
             x = int(input("Digite a linha da bandeira: "))
             y = int(input("Digite a coluna da bandeira: "))
 
             marcar_bandeira(mapa_visivel, x, y)
-            desenhar_campo(mapa_visivel)
-            
+            printar_campo(mapa_visivel)
+
             if verificar_vitoria(mapa_real, mapa_visivel):
                 print("Parabéns! Você venceu o jogo.")
-                desenhar_campo(mapa_real)
-
-
-
+                printar_campo(mapa_real)
+                break
         elif opcao == 0:
             print("Saindo do jogo. Até a próxima!")
             break
