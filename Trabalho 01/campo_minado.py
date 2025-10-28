@@ -36,7 +36,7 @@ def alocar_bombas(mapa, qtd_bombas):
         y = random.randint(1, coluna - 2)
 
         if mapa[x][y] != 'B': #Verifica se já existe uma bomba na posição
-            mapa[x][y] = 'B' 
+            mapa[x][y] = 'B'  #Se não houver uma bomba ele aloca uma bomba na posição
             bombas_colocadas += 1
 
 
@@ -44,7 +44,7 @@ def printar_campo(mapa):
     """Mostra o mapa na tela."""
 
     for i in range(len(mapa)):
-        for j in range(len(mapa[0])):
+        for j in range(len(mapa[0])): #Prita o mapa a cada nova jogada
             print(mapa[i][j], end=" ")
         print()
 
@@ -56,7 +56,7 @@ def contar_bombas_vizinhas(mapa, x, y):
 
     for i in range(x - 1, x + 2):
         for j in range(y - 1, y + 2):
-            if mapa[i][j] == 'B':
+            if mapa[i][j] == 'B': #Conta as bombas vizinhas e retorna o valor delas
                 bombas += 1
 
     return bombas
@@ -70,7 +70,7 @@ def revelar_posicao(mapa_real, mapa_visivel, x, y):
 
     if mapa_real[x][y] == 'B':
         mapa_visivel[x][y] = 'B'
-        return True  # Indicando que acertou uma bomba
+        return True  #Indicando que acertou uma bomba
 
     bombas_vizinhas = contar_bombas_vizinhas(mapa_real, x, y)
     mapa_visivel[x][y] = str(bombas_vizinhas)
@@ -81,9 +81,9 @@ def marcar_bandeira(mapa_visivel, x, y):
     """Marca ou desmarca uma bandeira na posição (x, y)."""
 
     if mapa_visivel[x][y] == '*':
-        mapa_visivel[x][y] = 'M' # Marca a bandeira
+        mapa_visivel[x][y] = 'M' #Marca a bandeira
     elif mapa_visivel[x][y] == 'M':
-        mapa_visivel[x][y] = '*' # Desmarca a bandeira
+        mapa_visivel[x][y] = '*' #Desmarca a bandeira
 
 
 def verificar_vitoria(mapa_real, mapa_visivel):
@@ -91,11 +91,11 @@ def verificar_vitoria(mapa_real, mapa_visivel):
 
     for i in range(1, len(mapa_real) - 1):
         for j in range(1, len(mapa_real[0]) - 1):
-            if mapa_real[i][j] == 'B' and mapa_visivel[i][j] != 'M':
-                return False  # Ainda há bomba não marcada
-            if mapa_real[i][j] != 'B' and mapa_visivel[i][j] == 'M':
-                return False  # Marcou algo errado
-    return True
+            if mapa_real[i][j] == 'B' and mapa_visivel[i][j] != 'M': #Ainda há bomba não marcada return False
+                return False  
+            if mapa_real[i][j] != 'B' and mapa_visivel[i][j] == 'M': #Marcou algo errado return False
+                return False  
+    return True #Se marcou todas as bombas corretamente return True
 
 
 
@@ -140,21 +140,22 @@ if __name__ == "__main__":
 
         opcao = int(input("Digite a opção desejada: "))
        
-        if opcao == 1:
+        if opcao == 1: #Revela uma posição no mapa
             x = int(input("Digite a linha que deseja revelar: "))
             y = int(input("Digite a coluna que deseja revelar: "))
 
-            if revelar_posicao(mapa_real, mapa_visivel, x, y):
+            if revelar_posicao(mapa_real, mapa_visivel, x, y): #Se for revelar_posição() for True acaba o jogo
                 print("Você acertou uma bomba! Fim de jogo.")
                 printar_campo(mapa_real)
                 break
 
             printar_campo(mapa_visivel)
 
-            if verificar_vitoria(mapa_real, mapa_visivel):
+            if verificar_vitoria(mapa_real, mapa_visivel): #Se verificar_vitoria() for True acaba o jogo
                 print("Parabéns! Você venceu o jogo.")
                 printar_campo(mapa_real)
                 break
+
         elif opcao == 2:
             x = int(input("Digite a linha da bandeira: "))
             y = int(input("Digite a coluna da bandeira: "))
@@ -162,12 +163,14 @@ if __name__ == "__main__":
             marcar_bandeira(mapa_visivel, x, y)
             printar_campo(mapa_visivel)
 
-            if verificar_vitoria(mapa_real, mapa_visivel):
+            if verificar_vitoria(mapa_real, mapa_visivel): #Se verificar_vitoria() for True acaba o jogo
                 print("Parabéns! Você venceu o jogo.")
                 printar_campo(mapa_real)
                 break
+
         elif opcao == 0:
-            print("Saindo do jogo. Até a próxima!")
+            print("Saindo do jogo.")
             break
+
         else:
             print("Opção inválida! Tente novamente.")
