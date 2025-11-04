@@ -37,6 +37,7 @@ def abrir_arquivo():
     except PermissionError:
         print(f"Permissão negada! Você não pode abrir o arquivo '{nome_arquivo}'.")
     except Exception as erro:
+        print(f"Ocorreu um erro ao abrir o arquivo: {erro}")
         registrar_erro(f"Erro ao abrir '{nome_arquivo}': {erro}")
     
 
@@ -59,6 +60,7 @@ def editar_arquivo():
     except PermissionError:
         print(f"Permissão negada! Você não pode editar o arquivo '{nome_arquivo}'.")
     except Exception as erro:
+        print(f"Ocorreu um erro ao editar o arquivo: {erro}")
         registrar_erro(f"Erro ao editar '{nome_arquivo}': {erro}")
 
     
