@@ -1,5 +1,7 @@
 import numpy as np
 
+#exe01
+
 a = np.array([[[1,2,3],
               [4,5,6],
               [7,8,9]]])
@@ -13,3 +15,4 @@ print(b[:1])
 c = np.linspace(1,10,4)
 
 print(c)
+
